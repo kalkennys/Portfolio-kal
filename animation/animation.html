@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demonstração de web animações usando HTML, CSS e JavaScript.">
+  <meta name="keywords" content="web animações, html, css, javascript, web development">
+  <meta name="author" content="Kalkennys">
+  <title>Web Animações - Meu Portfólio</title>
+  <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+  <!-- Link de Voltar -->
+  <div class="back-to-portfolio">
+    <a href="../index.html">← Voltar ao Portfólio</a>
+  </div>
+
+  <!-- Botão de Tema -->
+  <button id="theme-toggle">🌓 Modo Escuro</button>
+
+  <div class="animation-container">
+    <h1>🎨 Web Animações Interativas</h1>
+
+    <!-- Animação de Entrada com Scroll -->
+    <div class="animation-section" data-animation="fade-in">
+      <h2>Animação de Entrada (Scroll)</h2>
+      <div class="box" id="entry-animation">Aparece ao rolar</div>
+    </div>
+
+    <!-- Transição de Cores -->
+    <div class="animation-section" data-animation="fade-in">
+      <h2>Transição de Cores</h2>
+      <div class="box" id="color-transition">Mude de cor</div>
+      <button id="toggle-color">Alterar Cor</button>
+    </div>
+
+    <!-- Animação de Elementos -->
+    <div class="animation-section" data-animation="fade-in">
+      <h2>Animação de Elementos</h2>
+      <div class="box" id="element-animation">Move e gira</div>
+      <button id="start-animation">Iniciar Animação</button>
+    </div>
+
+    <!-- Nova: Animação de Pulsar -->
+    <div class="animation-section" data-animation="fade-in">
+      <h2>Animação de Pulsar</h2>
+      <div class="box pulse" id="pulse-animation">Estou pulsando!</div>
+      <button id="toggle-pulse">Parar Pulsar</button>
+    </div>
+
+    <!-- Nova: Animação de Girar -->
+    <div class="animation-section" data-animation="fade-in">
+      <h2>Animação de Girar</h2>
+      <div class="box" id="rotate-animation">🔄 Girando</div>
+      <button id="toggle-rotate">Iniciar Giro</button>
+    </div>
+
+    <!-- Nova: Animação de Fade -->
+    <div class="animation-section" data-animation="fade-in">
+      <h2>Animação de Fade</h2>
+      <div class="box fade" id="fade-animation">Fade In/Out</div>
+      <button id="toggle-fade">Alternar Fade</button>
+    </div>
+  </div>
+
+  <script src="animation.js"></script>
+</body>
+</html>

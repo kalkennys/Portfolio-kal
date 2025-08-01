@@ -1,0 +1,262 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s, color 0.4s, transform 0.4s, opacity 0.4s;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #2c3e50;
+  min-height: 100vh;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+  background: linear-gradient(135deg, #1e2024, #232526);
+  color: #ecf0f1;
+}
+
+/* Link de voltar */
+.back-to-portfolio {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.back-to-portfolio a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.back-to-portfolio a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Botão de Tema */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.6rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 1rem;
+}
+
+#theme-toggle:hover {
+  background: #2980b9;
+}
+
+body.dark-mode #theme-toggle {
+  background: #9b59b6;
+}
+
+body.dark-mode #theme-toggle:hover {
+  background: #8e44ad;
+}
+
+/* Container principal */
+.animation-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.animation-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #3498db;
+}
+
+body.dark-mode .animation-container h1 {
+  color: #9b59b6;
+}
+
+/* Seções animadas */
+.animation-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+body.dark-mode .animation-section {
+  background: rgba(30, 30, 30, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.animation-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animation-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #3498db;
+}
+
+body.dark-mode .animation-section h2 {
+  color: #9b59b6;
+}
+
+/* Caixa base */
+.box {
+  width: 250px;
+  height: 100px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4a90e2;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: default;
+}
+
+body.dark-mode .box {
+  background: #5d6d7e;
+}
+
+/* Animação de Entrada */
+#entry-animation {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Transição de Cores */
+#color-transition {
+  background: #61dafb;
+}
+
+#color-transition.color-red {
+  background: #e74c3c;
+}
+
+#color-transition.color-green {
+  background: #2ecc71;
+}
+
+/* Pulsar */
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Girar */
+#rotate-animation {
+  background: #e67e22;
+  transform: rotate(0deg);
+}
+
+#rotate-animation.rotate {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ANIMAÇÃO DE SLIDE + ROTAÇÃO (faltava no CSS) */
+@keyframes slideAndRotate {
+  0% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(150px) rotate(180deg); }
+  100% { transform: translateX(0) rotate(360deg); }
+}
+
+/* Fade */
+.fade {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.fade.hide {
+  opacity: 0;
+}
+
+/* Botões */
+button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#toggle-color {
+  background: #e74c3c;
+  color: white;
+}
+
+#toggle-color:hover {
+  background: #c0392b;
+}
+
+#toggle-pulse, #toggle-rotate, #toggle-fade {
+  background: #9b59b6;
+  color: white;
+}
+
+#toggle-pulse:hover, #toggle-rotate:hover, #toggle-fade:hover {
+  background: #8e44ad;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+  body {
+    padding: 1rem;
+  }
+
+  .animation-container h1 {
+    font-size: 2rem;
+  }
+
+  .animation-section {
+    padding: 1.5rem;
+  }
+
+  .box {
+    width: 200px;
+    height: 80px;
+    font-size: 0.9rem;
+  }
+}

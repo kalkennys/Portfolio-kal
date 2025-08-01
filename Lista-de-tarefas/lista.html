@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uma aplicação de lista de tarefas simples desenvolvida com HTML, CSS e JavaScript.">
+  <meta name="keywords" content="lista de tarefas, html, css, javascript, web development">
+  <meta name="author" content="Kalkennys">
+  <title>Lista de Tarefas - Meu Portfólio</title>
+  <link rel="stylesheet" href="lista.css">
+</head>
+<body>
+  <!-- Link de Voltar -->
+  <div class="back-to-portfolio">
+    <a href="../index.html">← Voltar ao Portfólio</a>
+  </div>
+
+  <!-- Botão de Tema -->
+  <button id="theme-toggle">🌓 Modo Escuro</button>
+
+  <div class="task-list-container">
+    <h1>📝 Lista de Tarefas</h1>
+    <p>Organize suas atividades do dia a dia.</p>
+
+    <form id="add-task-form">
+      <input type="text" id="new-task" placeholder="Adicione uma nova tarefa..." required />
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <ul id="task-list">
+      <!-- As tarefas serão adicionadas aqui pelo JavaScript -->
+    </ul>
+
+    <div id="empty-state" class="hidden">
+      <p>Nenhuma tarefa cadastrada. Adicione uma acima!</p>
+    </div>
+  </div>
+
+  <script src="lista.js"></script>
+</body>
+</html>

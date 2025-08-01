@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Um quiz online simples desenvolvido com HTML, CSS e JavaScript. Teste seus conhecimentos com perguntas variadas.">
+  <meta name="keywords" content="quiz online, html, css, javascript, web development">
+  <meta name="author" content="Kalkennys">
+  <title>Quiz Online - Meu Portfólio</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <!-- Link de Voltar -->
+  <div class="back-to-portfolio">
+    <a href="../index.html">← Voltar ao Portfólio</a>
+  </div>
+
+  <!-- Botão de Tema -->
+  <button id="theme-toggle">🌓 Modo Escuro</button>
+
+  <div class="quiz-container">
+    <h1>🧠 Quiz Online</h1>
+    <p id="question-counter">Pergunta <span id="current">1</span> de <span id="total">5</span></p>
+    
+    <div id="quiz"></div>
+    
+    <button id="next-question" disabled>Próxima Pergunta →</button>
+    
+    <div id="result" class="hidden">
+      <h2>Fim do Quiz!</h2>
+      <p>Você acertou <strong><span id="score"></span></strong> de <span id="total-questions"></span> perguntas.</p>
+      <p id="feedback"></p>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

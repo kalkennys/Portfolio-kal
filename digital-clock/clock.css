@@ -1,0 +1,182 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s, color 0.4s, transform 0.3s;
+}
+
+body {
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #000428, #004e92);
+  color: #00d8ff;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-attachment: fixed;
+}
+
+/* Modo Escuro (opcional, mas mantido para consistência) */
+body.dark-mode {
+  background: linear-gradient(135deg, #121212, #2c2c2c);
+  color: #4fc3f7;
+}
+
+body.dark-mode .clock-display {
+  text-shadow: 0 0 15px #4fc3f7, 0 0 30px rgba(79, 195, 247, 0.3);
+}
+
+/* Link de Voltar */
+.back-to-portfolio {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.back-to-portfolio a {
+  color: #81d4fa;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.back-to-portfolio a:hover {
+  color: #4fc3f7;
+  text-decoration: underline;
+}
+
+/* Botão de Tema */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.6rem 1rem;
+  background: rgba(0, 216, 255, 0.2);
+  color: #00d8ff;
+  border: 1px solid #00d8ff;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+#theme-toggle:hover {
+  background: rgba(0, 216, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+body.dark-mode #theme-toggle {
+  background: rgba(79, 195, 247, 0.2);
+  color: #4fc3f7;
+  border-color: #4fc3f7;
+}
+
+body.dark-mode #theme-toggle:hover {
+  background: rgba(79, 195, 247, 0.4);
+}
+
+/* Container do Relógio */
+.clock-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 216, 255, 0.3);
+}
+
+body.dark-mode .clock-container {
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.clock-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00d8ff;
+  text-shadow: 0 0 10px rgba(0, 216, 255, 0.5);
+}
+
+body.dark-mode .clock-container h1 {
+  color: #4fc3f7;
+  text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+}
+
+/* Relógio */
+.clock-display {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #00d8ff;
+  text-shadow: 0 0 15px #00d8ff, 0 0 30px rgba(0, 216, 255, 0.3);
+  letter-spacing: 2px;
+}
+
+body.dark-mode .clock-display {
+  color: #4fc3f7;
+}
+
+/* Data */
+.date-display {
+  font-size: 1.3rem;
+  color: #81d4fa;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+body.dark-mode .date-display {
+  color: #81d4fa;
+}
+
+/* Botão de Formato */
+#toggle-format {
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 216, 255, 0.2);
+  color: #00d8ff;
+  border: 1px solid #00d8ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+#toggle-format:hover {
+  background: rgba(0, 216, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+body.dark-mode #toggle-format {
+  background: rgba(79, 195, 247, 0.2);
+  color: #4fc3f7;
+  border-color: #4fc3f7;
+}
+
+body.dark-mode #toggle-format:hover {
+  background: rgba(79, 195, 247, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .clock-container {
+    padding: 2rem 1rem;
+  }
+
+  .clock-container h1 {
+    font-size: 2rem;
+  }
+
+  .clock-display {
+    font-size: 2.5rem;
+  }
+
+  .date-display {
+    font-size: 1.1rem;
+  }
+}

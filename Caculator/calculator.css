@@ -1,0 +1,125 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1d3324;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculator-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.calculator {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 50px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #221717;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0097a7;
+}
+
+button.zero {
+  grid-column: span 2;
+}
+
+button.equals {
+  background: #ff9800;
+  color: #fff;
+}
+
+button.equals:hover {
+  background: #e68a00;
+}
+
+/* Estilo do Link de Volta*/
+.back-link {
+  margin-bottom: 20px;
+  text-align: right; 
+}
+
+.back-link a {
+  text-decoration: none;
+  color: #00bcd4;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #0097a7;
+}
+
+/* Estilo do Botão de Voltar para o Portfólio */
+.back-to-portfolio {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.back-to-portfolio a {
+ display: inline-block;
+  padding: 10px 20px;
+  background: #00bcd4;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-portfolio a:hover {
+  background: #0097a7;
+  transform: scale(1.05);
+}

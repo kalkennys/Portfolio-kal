@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s, color 0.4s, transform 0.3s;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #121212, #1e3b59);
+  color: #ecf0f1;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+#theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+body.dark-mode #theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  color: #81d4fa;
+  border-color: #81d4fa;
+}
+
+body.dark-mode #theme-toggle:hover {
+  background: rgba(129, 212, 250, 0.2);
+}
+
+.back-to-portfolio {
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.back-to-portfolio a {
+  color: #81d4fa;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.back-to-portfolio a:hover {
+  color: #4fc3f7;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.stats span {
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.card-front {
+  background: #4a90e2;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  background: white;
+  color: #333;
+}
+
+body.dark-mode .card-back {
+  background: #2c2c2c;
+  color: #ecf0f1;
+}
+
+#restart-button {
+  margin: 2rem auto;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s;
+}
+
+#restart-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+body.dark-mode #restart-button {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #81d4fa;
+  color: #81d4fa;
+}
+
+body.dark-mode #restart-button:hover {
+  background: rgba(129, 212, 250, 0.2);
+}
+
+#victory-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 200;
+  display: none; /* Começa escondido */
+}
+
+#victory-screen:not(.hidden) {
+  display: block; /* Mostra quando não tem a classe "hidden" */
+}
+
+.victory-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.4s ease;
+}
+
+body.dark-mode .victory-content {
+  background: #1e3b59;
+  color: #ecf0f1;
+}
+
+#victory-screen h2 {
+  color: #27ae60;
+  margin-bottom: 1rem;
+}
+
+#victory-screen p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+#close-victory {
+  padding: 0.8rem 1.5rem;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#close-victory:hover {
+  background: #219653;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .grid {
+    gap: 0.8rem;
+  }
+
+  .card {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card-front,
+  .card-back {
+    font-size: 1.3rem;
+  }
+}

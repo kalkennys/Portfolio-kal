@@ -1,0 +1,278 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s, color 0.4s, transform 0.3s, opacity 0.3s;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #2c3e50;
+  min-height: 100vh;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #e0e0e0;
+}
+
+/* Link de Voltar */
+.back-to-portfolio {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.back-to-portfolio a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.back-to-portfolio a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Botão de Tema */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.6rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 1rem;
+}
+
+#theme-toggle:hover {
+  background: #2980b9;
+}
+
+body.dark-mode #theme-toggle {
+  background: #9b59b6;
+}
+
+body.dark-mode #theme-toggle:hover {
+  background: #8e44ad;
+}
+
+/* Container do Quiz */
+.quiz-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+body.dark-mode .quiz-container {
+  background: rgba(30, 30, 40, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-container h1 {
+  color: #3498db;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+body.dark-mode .quiz-container h1 {
+  color: #9b59b6;
+}
+
+#question-counter {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+body.dark-mode #question-counter {
+  color: #bdc3c7;
+}
+
+/* Pergunta */
+#quiz h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+body.dark-mode #quiz h2 {
+  color: #ecf0f1;
+}
+
+/* Alternativas */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.option {
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+body.dark-mode .option {
+  background: #34495e;
+  border-color: #555;
+  color: #ecf0f1;
+}
+
+.option:hover {
+  background: #e9ecef;
+  border-color: #3498db;
+  transform: translateX(5px);
+}
+
+body.dark-mode .option:hover {
+  background: #4a5f75;
+}
+
+.option.selected {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+body.dark-mode .option.selected {
+  background: #9b59b6;
+  border-color: #9b59b6;
+}
+
+.option.correct {
+  background: #2ecc71;
+  color: white;
+  border-color: #2ecc71;
+}
+
+.option.incorrect {
+  background: #e74c3c;
+  color: white;
+  border-color: #e74c3c;
+}
+
+/* Botão Próxima */
+#next-question {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+#next-question:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+#next-question:disabled {
+  cursor: not-allowed;
+}
+
+#next-question:not(:disabled) {
+  opacity: 1;
+}
+
+body.dark-mode #next-question {
+  background: #9b59b6;
+}
+
+body.dark-mode #next-question:hover:not(:disabled) {
+  background: #8e44ad;
+}
+
+/* Resultado */
+#result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #d5f5e3;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+body.dark-mode #result {
+  background: #1a3d2a;
+  color: #a3e4d7;
+}
+
+#result h2 {
+  color: #27ae60;
+  margin-bottom: 0.5rem;
+}
+
+body.dark-mode #result h2 {
+  color: #2ecc71;
+}
+
+#feedback {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #16a085;
+}
+
+body.dark-mode #feedback {
+  color: #a3e4d7;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animações */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .quiz-container {
+    padding: 1.5rem;
+  }
+
+  .quiz-container h1 {
+    font-size: 2rem;
+  }
+
+  #quiz h2 {
+    font-size: 1.3rem;
+  }
+
+  .option {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}  
